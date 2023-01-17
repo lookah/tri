@@ -6,6 +6,7 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/lookah/tri/todo"
 	"github.com/spf13/cobra"
 )
 
@@ -32,9 +33,14 @@ func init() {
 }
 
 func addRun(cmd *cobra.Command, args []string) {
-	fmt.Println("FAK DIS ŠIT!")
+	fmt.Println("Adding item function")
+
+	items := []todo.Item{}
 
 	for _, x := range args {
 		fmt.Println(x)
+		items = append(items, todo.Item{Text: x})
 	}
+
+	fmt.Println(items)
 }
